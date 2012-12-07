@@ -1,0 +1,38 @@
+
+=begin html
+
+<h1> Cronlib.php - Crontab Manager </h1>
+<br />
+<h1>About</h1>
+Cronlib provides an easy way to manage a remote servers Crontab.
+<h1>Installing</h1>
+To do...
+<h1>Requires</h1>
+Cronlib requires phpseclib SSH2 and RSA implementions
+<br />
+To do... Installing phpseclib
+<h1>Features</h1>
+<blockquote>
+<strong>Create a Cron job</strong> Just use the CRUD interface
+<br />
+<br />
+<strong>Read a Cron job</strong> Just use the CRUD interface
+<br />
+<br />
+<strong>Update a Cron job</strong> Just use the CRUD interface
+<br />
+<br />
+<strong>Delete a Cron job</strong> Just use the CRUD interface
+<br />
+<br />
+</blockquote>
+<h1>License</h1>
+Cronlib is release under the MIT license:
+<br />
+<ul>
+	<li>
+		<a href="www.opensource.org/licenses/MIT">www.opensource.org/licenses/MIT</a>
+	</li>
+</ul>
+
+=end html
