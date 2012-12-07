@@ -6,7 +6,13 @@
 <h1>About</h1>
 Cronlib provides an easy way to manage a remote servers Crontab.
 <h1>Installing</h1>
-To do...
+Cronlib will only recognize Crontab directives that are wrapped between the Cronlib flag "# Cronlib"
+<br />
+<br /> # Cronlib
+<br /> * * * * * /something
+<br /> # Cronlib
+<br />
+To do more...
 <h1>Requires</h1>
 Cronlib requires phpseclib SSH2 and RSA implementions
 <br />
