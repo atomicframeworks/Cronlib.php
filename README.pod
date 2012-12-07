@@ -2,7 +2,6 @@
 =begin html
 
 <h1> Cronlib.php - Crontab Manager </h1>
-<br />
 <h1>About</h1>
 Cronlib provides an easy way to manage a remote servers Crontab.
 <h1>Installing</h1>
