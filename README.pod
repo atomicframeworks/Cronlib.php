@@ -20,28 +20,70 @@ Cronlib requires phpseclib SSH2 and RSA implementions
 <br />
 To do... Installing phpseclib
 <h1>Features</h1>
-<blockquote>
-<strong>Create a Cron job</strong> Just use the CRUD interface
+
+<h2>Create</h2>
+Create a new rule in the Cronlib section of Crontab
+<ul>
+	<li>
+		Passing an int for offset will insert at that index (0 based)
+	</li>
+	<li>
+		Passing nothing for offset will append the element - passing 0 will insert at the start
+	</li>
+	<li>
+		Passing null as the directive will only add the flags
+	</li>
+	<li>
+		Passing an empty string as the directive will add the empty string
+	</li>
+</ul>
 <br />
-Conlib::create('* * * * * /path/script.php');
+
+<h2>Read</h2>
+Parse Crontab and return (array) the selected Cronlib directives from the crontab
+<ul>
+	<li>
+		Will read from length number from offset (0 based)
+	</li>
+	<li>
+		A blank offset will result in all elements
+	</li>
+	<li>
+		A blank length will result in 1 element
+	</li>
+	<li>
+		If there is no directive at offset then return an empty array
+	</li>
+</ul>
 <br />
+
+<h2>Update</h2>
+Update Crontab at offset (int) with directive (string)
+<ul>
+	<li>
+		Returns true if Cronlib rule existed and was updated
+	</li>
+	<li>
+		Returns false if there was no rule to update
+	</li>
+</ul>
 <br />
-<strong>Read a Cron job</strong> Just use the CRUD interface
+
+<h2>Delete</h2>
+Array Splice out offset - length of Cronlib directives
+<ul>
+	<li>
+		Works like array splice - (0 based)
+	</li>
+	<li>
+		Passing no offset will clear out all directives and flags
+	</li>
+	<li>
+		If length is specified and is positive, then that many elements will be removed.
+	</li>
+</ul>
 <br />
-Conlib::read(0, 1);
-<br />
-<br />
-<strong>Update a Cron job</strong> Just use the CRUD interface
-<br />
-Conlib::update(0, '* * * * * /path/script.php');
-<br />
-<br />
-<strong>Delete a Cron job</strong> Just use the CRUD interface
-<br />
-Conlib::delete(0, 1);
-<br />
-<br />
-</blockquote>
+
 <h1>License</h1>
 Cronlib is release under the MIT license:
 <br />
