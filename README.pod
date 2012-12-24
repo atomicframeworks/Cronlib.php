@@ -19,7 +19,7 @@ To do more...
 Cronlib requires phpseclib SSH2 and RSA implementions
 <br />
 To do... Installing phpseclib
-<h1>Features</h1>
+<h1>CRUD Interface</h1>
 
 <h2>Create</h2>
 Create a new rule in the Cronlib section of Crontab
@@ -37,7 +37,6 @@ Create a new rule in the Cronlib section of Crontab
 		Passing an empty string as the directive will add the empty string
 	</li>
 </ul>
-<br />
 
 <h2>Read</h2>
 Parse Crontab and return (array) the selected Cronlib directives from the crontab
@@ -55,7 +54,6 @@ Parse Crontab and return (array) the selected Cronlib directives from the cronta
 		If there is no directive at offset then return an empty array
 	</li>
 </ul>
-<br />
 
 <h2>Update</h2>
 Update Crontab at offset (int) with directive (string)
@@ -67,7 +65,6 @@ Update Crontab at offset (int) with directive (string)
 		Returns false if there was no rule to update
 	</li>
 </ul>
-<br />
 
 <h2>Delete</h2>
 Array Splice out offset - length of Cronlib directives
