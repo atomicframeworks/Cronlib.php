@@ -1,0 +1,377 @@
+.content div.banner {
+	position: relative;
+
+	width: 60%;
+	height: 32px;
+	padding-left: 20px;
+			
+	text-align: left;
+	background-color: #6C6C6C;
+	background: -moz-linear-gradient(-45deg,  rgba(156,156,156,1) 0%, rgba(165,165,165,1) 9%, rgba(254,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(156,156,156,1)), color-stop(9%,rgba(165,165,165,1)), color-stop(100%,rgba(254,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-60deg,  rgba(156,156,156,1) 0%,rgba(165,165,165,1) 9%,rgba(254,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-60deg,  rgba(156,156,156,1) 0%,rgba(165,165,165,1) 9%,rgba(254,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-60deg,  rgba(156,156,156,1) 0%,rgba(165,165,165,1) 9%,rgba(254,255,255,0) 100%); /* IE10+ */	
+}
+div.banner a {
+	position: absolute;
+	top: -11px;
+	margin: 0;
+	padding: 0;
+	font-size: 44px;
+	color: #ffffff;
+	text-decoration: none;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+			
+}
+.content ul {
+	/* UL float containment */
+	float: left;
+	margin: 20px 0 0 25px;
+	padding: 0;
+	font-size: 24px;
+	/* Helvetica font stack */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+	list-style-type: none;
+}
+		
+/* Standard list item (non active) */
+.content ul li {
+	position: relative;
+	float: left;
+	width: 100%;
+	color: #BAB9C7;
+	color: #C3C2D0;
+	margin-top: 7px;
+	margin-bottom: 25px;
+}
+/* Hand for key for grabbing to move */
+.content ul li .key {
+	cursor: ns-resize;
+}
+.content ul li form {
+	margin-top: 4px;
+	margin-left: -4px;
+}
+/* Standard input element (time or command) */
+.content ul li form input {
+	color: #C3C2D0;
+	height: 22px;
+	padding: 5px 0px 4px 17px;
+	line-height: 30px;
+	outline: 1px solid transparent;
+}
+/* Blue outline on focus */
+.content ul li input:focus {
+	outline: 1px solid #3878af;
+}
+		
+/* NOTICE */
+/* saved update */
+.content ul li div span.notice {
+	position: absolute;
+	bottom: 0;
+    left: 0;
+	opacity: 0;
+	visibility: hidden;
+	color: #3878af;
+}
+.content ul li div span.notice.show {
+	opacity: 1;
+	visibility: visible;
+}
+		
+/* TRASH CAN */
+.content ul li input.trash {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	height: 27px;
+	width: 25px;
+	border: 0px;
+	cursor: pointer;
+	color: transparent !important;
+	/* Hide the item for fade in transition */
+	visibility: hidden;
+	opacity: 0;
+			
+	background-image: url('/assets/images/can.png');
+	background-repeat: no-repeat;
+	background-position: 1px 4px;
+}
+.content ul li input.trash:focus {
+	outline: 0;
+}
+/* UNLOCKED TRASH CAN */
+.content ul li.unlocked input.trash {
+	visibility: visible;
+	opacity: 1;
+}
+		
+/* LOCK */
+.content ul li div.lock {
+	position: absolute;
+	bottom: 0px;
+	height: 73px;
+	width: 33px;
+	margin-left: -3px;
+	background-image: url('/assets/images/lock-sprites.png');
+	background-repeat: no-repeat;
+	background-position: 1px 4px;
+}
+.content ul li.unlocked div.lock {
+	background-position: -69px 4px;
+}
+/* Active list item */
+.content ul li.active, .content ul li.active input {
+	color: #6C6C6C;
+}
+.content ul li.trashed input{
+	text-decoration: line-through;
+}
+.content ul li.active div.lock {
+	background-image: url('/assets/images/lock-sprites.png');
+	background-repeat: no-repeat;
+	background-position: -34px 4px;
+}
+.content ul li.active.unlocked div.lock {
+	background-position: -113px 4px;
+}
+		
+/* SUBMIT BUTTON */
+/* Hide Submit button */
+.content ul li div form input[type=submit]{
+	position: relative;
+	left: 80px;
+	padding-top: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	opacity: 0;
+	visibility: hidden;
+	text-decoration: none;
+	border-radius: 1px;
+	border: 2px solid #ccc;
+	background-color: transparent;
+	height: 30px;
+	font-size: 12px;
+	line-height: 25px;
+	text-transform: uppercase;
+	background-color: rgba(77, 77, 77, 0.2);
+	font-weight:600;
+	color: #727374;
+}
+/* Submit focus / active */
+.content ul li div form input[type=submit]:active{
+	position: relative;
+	left: 79px;
+	top: 1px;
+}
+/* Show Submit button */
+.content ul li.unlocked div form input[type=submit]{
+	opacity: 1;
+	visibility: visible;
+	text-decoration: none;
+}
+/* Submit hover */
+.content ul li div form input[type=submit]:hover{
+	color: #75d3d3;
+	color:rgba(74, 156, 227, 1);
+	color: #4a9ce3;			
+	color: #3878af;
+}
+/* Directive key */
+.content ul li span {
+	float: left;
+	margin-right: 10px;
+}
+
+/* Directive key */
+.content ul li > div {
+	float: left;
+	width: 95%;
+}
+		
+.time {
+	min-width: 300px;
+	margin-top: -3px;
+	line-height: 29px;
+}
+.utils {
+	margin-top: 5px;
+}
+.utils .switch { 
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.utils:focus {
+	outline: 0;
+}
+.time input, .command input{
+	border: 0px;
+	font-size: 24px;
+	/* Monospace font stack for input size */
+    font-family: 'Courier New', Courier, monospace; 
+    font-weight: 300;
+}
+.transition {
+	-webkit-transition: all .2s ease-out;
+	-moz-transition: all .2s ease-out;
+	-o-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+		
+/* START IOS STYLE SWITCH */
+.utils .switch-label{
+	position: absolute;
+	right: 90%;
+	bottom: 0;
+	margin-right: 15px;
+	font-size: 22px;
+	font-weight: 300;
+}
+.switch {
+	float: left;
+	position: relative;
+	bottom: 0;
+	left: 90px;
+	height: 23px;
+	width: 65px;
+	margin-top: 5px;
+	margin-right: 15px;
+	border: 1px solid #B6B6B6;
+	border-radius: 20px;
+	font-size: 20px;
+	box-shadow: inset 0 1px 3px #BABABA, inset 0 12px 3px 2px rgba(232, 232, 232, 0.5);
+	cursor: pointer;
+}
+/* Switch toggled element */
+.switch::before {
+	content: "";
+	display: block;
+	height: 23px;
+	width: 0px;
+	position: absolute;
+	border-radius: 20px;
+	box-shadow: inset 0 1px 2px #0063B7, inset 0 12px 3px 2px rgba(0, 127, 234, 0.5);
+	background-color: #64B1F2;
+}
+/* Active switch toggled element */
+.switch.active::before {
+	width: 65px;
+}
+		
+/* Hide checkbox inside the switch */
+.switch input[type=checkbox] {
+	display: none;
+}
+/* Switch toggle button */
+.switch > .thumb {
+	display: block;
+	width: 21px;
+	height: 21px;
+	position: relative;
+	top: 0;
+	z-index: 3;
+	border: solid 1px #B6B6B6;
+	border-radius: 28px;
+	font-size: .855em ;
+	font-weight: 400;
+	box-shadow: inset 0 2px 1px white, inset 0 -2px 1px white;
+	background-color: #E6E6E6;
+	background-image: linear-gradient(top, #CECECE, #FBFBFB);
+			
+	-webkit-transition: all 0.125s ease-in-out;
+	-moz-transition: all 0.125s ease-in-out;
+	-o-transition: all 0.125s ease-in-out;
+	-ms-transition: all 0.125s ease-in-out;
+	transition: all 0.125s ease-in-out;
+			
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+		
+/* Active switch toggle button */
+.switch.active > .thumb {
+
+	-webkit-transform: translate3d(42px,0,0);
+	-moz-transform: translateX(42px);
+	-o-transform: translateX(42px);
+	-ms-transform: translateX(42px);
+	transform: translateX(42px);
+}
+/* Hide the "Off" text when active */
+.switch.active > .thumb::after {
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: 0s ease-in;
+	-moz-transition: 0s ease-in;
+	-o-transition: 0s ease-in;
+	-ms-transition: 0s ease-in;
+	transition: 0s ease-in;
+}
+/* Show the "On" text when active */
+.switch.active > .thumb::before {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: .3s ease-in;
+	-moz-transition: .3s ease-in;
+	-o-transition: .3s ease-in;
+	-ms-transition: .3s ease-in;
+	transition: .3s ease-in;
+}
+		
+/* On / Off text indicators */
+.switch > .thumb::before {
+	content: "On";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -30px;
+	color: #ffffff;
+	text-shadow: 0.03em 0.03em 0.07em #333333;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: 0s ease-in;
+	-moz-transition: 0s ease-in;
+	-o-transition: 0s ease-in;
+	-ms-transition: 0s ease-in;
+	transition: 0s ease-in;
+}
+/* On / Off text indicators */
+.switch > .thumb::after {
+	content: "Off";
+	display: block;
+	position: absolute;
+	top: 0;
+	right: -30px;
+	color: #707070;
+	text-shadow: 0.03em 0.03em 0.07em #737373;
+	-webkit-transition: .3s ease-in;
+	-moz-transition: .3s ease-in;
+	-o-transition: .3s ease-in;
+	-ms-transition: .3s ease-in;
+	transition: .3s ease-in;
+}
+		
+/* Inactive (unlocked) */
+.content ul li div.switch {
+	visibility: hidden;
+	opacity: 0;
+}
+		
+/* Active (unlocked) */
+.content ul li.unlocked div.switch {
+	visibility: visible;
+	opacity: 1;
+}
+		
+/* END iOS style switch */
