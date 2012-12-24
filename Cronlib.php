@@ -327,7 +327,6 @@
 		
 		static private function connect(){
 			// Return the contents of crontab
-			define('NET_SSH2_LOGGING', true);
 			
 			$ssh = new Net_SSH2( self::$domain, self::$port );
 			
