@@ -67,7 +67,7 @@ Update Crontab at offset (int) with directive (string)
 </ul>
 
 <h2>Delete</h2>
-Array Splice out offset - length of Cronlib directives
+Array splice out (offset) through (length) of Cronlib directives
 <ul>
 	<li>
 		Works like array splice - (0 based)
