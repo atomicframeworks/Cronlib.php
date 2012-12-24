@@ -360,7 +360,6 @@
 				}
 				// Else use http auth
 				else{
-					// If any part is empty set header
 					// Set auth header if no user
 					if (!isset($_SERVER['PHP_AUTH_USER']) ||
 						empty($_SERVER['PHP_AUTH_USER']) ||
