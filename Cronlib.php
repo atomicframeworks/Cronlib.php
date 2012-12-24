@@ -26,11 +26,12 @@
 		
 		////
 		//  Username - Username to edit crontabs on
-		public static $user = 'username';
+		//  	Note: Leaving blank will use HTTP auth
+		public static $user = '';
 		
 		////
 		//  PW - Password for the above user
-		public static $pw = 'password';
+		public static $pw = '';
 		
 		////
 		//  Key - Path to RSA private key file (not required) for passwordless auth
@@ -348,11 +349,33 @@
 				}
 			}
 			else{
-				// If we cannot login then exit
-				if (!$ssh->login(self::$user, self::$pw)) {
-					//$logs = $ssh->getLog();
-					//print_r($logs);
-					exit('Auth Failed: Type- Username & password');
+				// Use class credentials if available
+				if( !empty(self::$user) ){
+					// If we cannot login then exit
+						//$logs = $ssh->getLog();
+						//print_r($logs);
+						exit('Auth Failed: Type- Username & password');
+					}
+				}
+				// Else use http auth
+				else{
+					// If any part is empty set header
+					if (!isset($_SERVER['PHP_AUTH_USER']) ||
+						empty($_SERVER['PHP_AUTH_USER']) ||
+						empty($_SERVER['PHP_AUTH_PW'])
+						) {
+					    header('WWW-Authenticate: Basic realm="Cronlib SSL"');
+					    header('HTTP/1.0 401 Unauthorized');
+					    exit;
+					} 
+					else {
+						// If we cannot login then exit
+						if (!$ssh->login($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
+							//$logs = $ssh->getLog();
+							//print_r($logs);
+							exit('Auth Failed: Type- Username & password');
+						}
+					}
 				}
 			}			
 			// Return the SSH connection handle
