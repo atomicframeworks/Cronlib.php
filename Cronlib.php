@@ -352,6 +352,7 @@
 				// Use class credentials if available
 				if( !empty(self::$user) ){
 					// If we cannot login then exit
+					if (!$ssh->login(self::$user, self::$pw)) {
 						//$logs = $ssh->getLog();
 						//print_r($logs);
 						exit('Auth Failed: Type- Username & password');
@@ -360,12 +361,13 @@
 				// Else use http auth
 				else{
 					// If any part is empty set header
+					// Set auth header if no user
 					if (!isset($_SERVER['PHP_AUTH_USER']) ||
 						empty($_SERVER['PHP_AUTH_USER']) ||
-						empty($_SERVER['PHP_AUTH_PW'])
 						) {
 					    header('WWW-Authenticate: Basic realm="Cronlib SSL"');
 					    header('HTTP/1.0 401 Unauthorized');
+					    echo 'You must provide valid credentials.';
 					    exit;
 					} 
 					else {
