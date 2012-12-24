@@ -3,9 +3,11 @@
 
 <h1> Cronlib.php - Crontab Manager </h1>
 <h1>About</h1>
-Cronlib provides an easy way to manage a remote servers Crontab.
+Cronlib provides an simple CRUD interface to manage a remote servers Crontab.
 <h1>Installing</h1>
 Cronlib will only recognize Crontab directives that are wrapped between the Cronlib flag "# Cronlib"
+<br />
+Example:
 <blockquote>
 # Cronlib
 <br /> * * * * * /something
@@ -21,14 +23,22 @@ To do... Installing phpseclib
 <blockquote>
 <strong>Create a Cron job</strong> Just use the CRUD interface
 <br />
+Conlib::create('* * * * * /path/script.php');
+<br />
 <br />
 <strong>Read a Cron job</strong> Just use the CRUD interface
+<br />
+Conlib::read(0, 1);
 <br />
 <br />
 <strong>Update a Cron job</strong> Just use the CRUD interface
 <br />
+Conlib::update(0, '* * * * * /path/script.php');
+<br />
 <br />
 <strong>Delete a Cron job</strong> Just use the CRUD interface
+<br />
+Conlib::delete(0, 1);
 <br />
 <br />
 </blockquote>
