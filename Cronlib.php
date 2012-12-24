@@ -362,7 +362,7 @@
 				else{
 					// Set auth header if no user
 					if (!isset($_SERVER['PHP_AUTH_USER']) ||
-						empty($_SERVER['PHP_AUTH_USER']) ||
+						empty($_SERVER['PHP_AUTH_USER'])
 						) {
 					    header('WWW-Authenticate: Basic realm="Cronlib SSL"');
 					    header('HTTP/1.0 401 Unauthorized');
