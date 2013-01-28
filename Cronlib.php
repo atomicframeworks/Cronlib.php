@@ -548,11 +548,16 @@
 						// Run at startup
 						$job_time_array = array('@reboot', '', '', '', '');
 					}
+          // Predefined so we have 1 place of time (an @schedule string )
+  				// Slice out everything after the time ( commands )
+  				$job_command_string = implode(' ', array_slice($job_array, 1));
 				}
+        else {
+          // Not predefined meaning we have 5 places of time
+  				// Slice out everything after the time ( commands )
+  				$job_command_string = implode(' ', array_slice($job_array, 5));
+        }
 					
-				// Slice out everything after the time ( commands )
-				$job_command_string = implode(' ', array_slice($job_array, 5));
-				
 				// Package times and command in to single array
 				$job = array($job_time_array, $job_command_string, $active);
 				
