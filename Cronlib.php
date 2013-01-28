@@ -52,7 +52,7 @@
 			// Loop and set any valid options
 			foreach($options as $key => $value){
 				if( property_exists($this, $key) ){
-					$this->key_file = $value;
+					$this->$key = $value;
 				}
 			}
 		}

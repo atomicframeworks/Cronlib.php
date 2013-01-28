@@ -11,7 +11,7 @@
 			$selector = $index+1;
 			
 			// Delete directive at index
-			$return = Cronlib::delete($index);
+			$return = $cron->delete($index);
 			
 			// If we have a true return...
 			if ($return == 1){
@@ -45,7 +45,7 @@
 			$selector = $index+1;
 
 			// Update the index with the directive
-			$return = Cronlib::update($index, $directive);
+			$return = $cron->update($index, $directive);
 			
 			// If the return is true show saved notice otherwise show error notice
 			if ($return == 1){
