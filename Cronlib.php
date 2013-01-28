@@ -352,7 +352,7 @@
 				
 				// Use private key if available
 				if( !empty($this->key_password) ){
-					$rsa->$rsasetPassword($this->key_password);
+					$rsa->setPassword($this->key_password);
 				}
 				
 				// If we cannot login then exit
