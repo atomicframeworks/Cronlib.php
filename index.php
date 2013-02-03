@@ -1,5 +1,19 @@
 <?
 	require_once('Cronlib.php');
+			
+	// Some login options
+	$options = array (
+		'username' => '',
+		'password' => '',
+		'key_file' => '',
+		'key_password' => ''
+	);
+				
+	// Create a new instance of Cronlib
+	// Change out the ip (127.0.0.1) and port (22) for the remote server you wish to manage
+	$cron = new Cronlib('127.0.0.1', '22', $options);
+	
+	// Hook for catching form submissions to update $cron
 	require_once('cronlib_hook.php');
 ?>
 <!DOCTYPE html>
@@ -42,18 +56,6 @@
 			<ul>
 			<?php
 			
-				// Some optional options
-				$options = array (
-					'username' => '',
-					'password' => '',
-					'key_file' => '',
-					'key_password' => ''
-				);
-				
-				// Create a new instance of Cronlib
-				// Change out the ip (127.0.0.1) and port (22) for the remote server you wish to manage
-				$cron = new Cronlib('127.0.0.1', '22', $options);
-				
 				foreach( $cron->jobs() as $key => $job ){
 					if ($job[2] == true){
 						$class = 'active';
